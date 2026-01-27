@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lady Faith's Designs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #b30059;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #b30059;
+            text-align: center;
+        }
+
+        .services, .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #b30059;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800040;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        
+    </style>
+    <body>
+    
+<!-- EmailJS scripts go HERE -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.j0s"></script>
+
+  <script>
+    (function(){
+      emailjs.init("8wIiP-pj2zvnOBIv7");
+    })();
+
+    document.getElementById("contact-form")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm(
+          "contact_service",
+          "contact_form",
+          this
+        ).then(function() {
+          alert("Message sent successfully!");
+        }, function(error) {
+          alert("Failed to send message.");
+        });
+      });
+  </script>
+
+</body>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Lady Faith's Designs</h1>
+    <p>Creative Graphic Design for Every Occasion</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p style="text-align:center;">
+        I am Lady Faith, a creative graphic designer specializing in wedding cards, logos,
+        flyers, and birthday cards. I bring ideas to life with beautiful and professional designs.
+    </p>
+</section>
+
+<section>
+    <h2>My Services</h2>
+    <div class="services">
+        <div class="card">Wedding Cards</div>
+        <div class="card">Logos</div>
+         <div class="card">Flyers</div>
+        <div class="card">Birthday Cards</div>
+    </div>
+</section>
+
+<section>
+    <h2>My Designs</h2>
+    <div class="portfolio">
+        <div class="card">
+            <img src="CRIS.jpg" alt="Design Sample">
+            <p>Wedding Card Design</p>
+        </div>
+        <div class="card">
+            <img src="JALA.jpg" alt="Design Sample">
+            <p>Logo Design</p>
+        </div>
+        <div class="card">
+            <img src="bd gf.jpg" alt="Design Sample">
+            <p>Birthday Card Design</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Contact Me</h2>
+
+    <!-- CONTACT FORM -->
+    <form id="contact-form">
+  <input type="text" name="from_name" placeholder="Your Name" required>
+  <input type="email" name="from_email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+</section>
+
+<footer>
+    <p>Email: kabughofaith63@gmail.com</p>
+    <p>© 2026 Lady Faith's Designs</p>
+</footer>
+
+</body>
+</html>
